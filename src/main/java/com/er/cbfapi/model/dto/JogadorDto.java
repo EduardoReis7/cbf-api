@@ -1,24 +1,14 @@
-package com.er.cbfapi.model;
+package com.er.cbfapi.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDate;
 
-@Entity
-public class Jogador implements Serializable {
+public class JogadorDto {
 
-    private static final long serialVersionUID = 5394576251962836698L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cod_jogador")
     private Long id;
-    @Column(name = "nome")
     private String nome;
     @JsonFormat(pattern = "yyyy/MM/dd")
-    @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
     public Long getId() {
@@ -44,5 +34,4 @@ public class Jogador implements Serializable {
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-
 }
