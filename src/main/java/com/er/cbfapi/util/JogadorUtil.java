@@ -6,15 +6,14 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class JogadorUtil {
+public abstract class JogadorUtil {
 
-    private final ModelMapper modelMapper;
+    static ModelMapper modelMapper = new ModelMapper();
 
-    public JogadorUtil(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
-    }
-
-    public Jogador convertJogadorDtoToJogador(JogadorDto dto) {
+    public static Jogador convertJogadorDtoToJogador(JogadorDto dto) {
         return modelMapper.map(dto, Jogador.class);
+    }
+    public static JogadorDto convertJogadorToJogadorDto(Jogador jogador) {
+        return modelMapper.map(jogador, JogadorDto.class);
     }
 }

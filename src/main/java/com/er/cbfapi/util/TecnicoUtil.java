@@ -6,14 +6,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TecnicoUtil {
+public abstract class TecnicoUtil {
 
-    private final ModelMapper modelMapper;
-    public TecnicoUtil(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
-    }
-
-    public Tecnico convertTecnicoDtoToTecnico(TecnicoDto dto) {
+    static ModelMapper modelMapper = new ModelMapper();
+    public static Tecnico convertTecnicoDtoToTecnico(TecnicoDto dto) {
         return modelMapper.map(dto, Tecnico.class);
     }
 }

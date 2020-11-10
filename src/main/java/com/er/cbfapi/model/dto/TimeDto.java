@@ -1,7 +1,7 @@
 package com.er.cbfapi.model.dto;
 
-import com.er.cbfapi.model.Jogador;
 import com.er.cbfapi.model.Tecnico;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,9 +10,10 @@ public class TimeDto {
 
     private Long id;
     private String nome;
+    @JsonFormat(pattern = "yyyy/MM/dd")
     private LocalDate dataFundacao;
-    private Tecnico tecnico;
-    private List<Jogador> listaJogadores;
+    private TecnicoDto tecnicoDto;
+    private List<JogadorDto> listaJogadores;
 
     public Long getId() {
         return id;
@@ -38,19 +39,19 @@ public class TimeDto {
         this.dataFundacao = dataFundacao;
     }
 
-    public Tecnico getTecnico() {
-        return tecnico;
+    public TecnicoDto getTecnicoDto() {
+        return tecnicoDto;
     }
 
-    public void setTecnico(Tecnico tecnico) {
-        this.tecnico = tecnico;
+    public void setTecnicoDto(TecnicoDto tecnicoDto) {
+        this.tecnicoDto = tecnicoDto;
     }
 
-    public List<Jogador> getListaJogadores() {
+    public List<JogadorDto> getListaJogadores() {
         return listaJogadores;
     }
 
-    public void setListaJogadores(List<Jogador> listaJogadores) {
+    public void setListaJogadores(List<JogadorDto> listaJogadores) {
         this.listaJogadores = listaJogadores;
     }
 }

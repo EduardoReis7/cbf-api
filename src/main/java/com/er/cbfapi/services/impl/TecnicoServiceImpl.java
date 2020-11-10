@@ -5,6 +5,8 @@ import com.er.cbfapi.repository.TecnicoRepository;
 import com.er.cbfapi.services.TecnicoService;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class TecnicoServiceImpl implements TecnicoService {
 
@@ -17,5 +19,10 @@ public class TecnicoServiceImpl implements TecnicoService {
     @Override
     public Tecnico save(Tecnico tecnico) {
         return tecnicoRepository.save(tecnico);
+    }
+
+    @Override
+    public Optional<Tecnico> findById(Long id) {
+        return tecnicoRepository.findById(id);
     }
 }

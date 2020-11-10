@@ -18,15 +18,13 @@ import javax.validation.Valid;
 public class TecnicoController {
 
     private final TecnicoService tecnicoService;
-    private final TecnicoUtil tecnicoUtil;
 
-    public TecnicoController(TecnicoService tecnicoService, TecnicoUtil tecnicoUtil) {
+    public TecnicoController(TecnicoService tecnicoService) {
         this.tecnicoService = tecnicoService;
-        this.tecnicoUtil = tecnicoUtil;
     }
 
     @PostMapping
     public ResponseEntity<Tecnico> cadastrarTecnico(@Valid @RequestBody TecnicoDto dto) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(tecnicoService.save(tecnicoUtil.convertTecnicoDtoToTecnico(dto)));
+        return ResponseEntity.status(HttpStatus.CREATED).body(tecnicoService.save(TecnicoUtil.convertTecnicoDtoToTecnico(dto)));
     }
 }

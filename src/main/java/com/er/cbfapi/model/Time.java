@@ -1,5 +1,7 @@
 package com.er.cbfapi.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -17,6 +19,7 @@ public class Time implements Serializable {
     @Column(name = "nome")
     private String nome;
     @Column(name = "data_fundacao")
+    @JsonFormat(pattern = "yyyy/MM/dd")
     private LocalDate dataFundacao;
     @OneToOne
     private Tecnico tecnico;
