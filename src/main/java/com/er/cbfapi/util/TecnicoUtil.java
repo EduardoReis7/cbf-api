@@ -12,4 +12,8 @@ public abstract class TecnicoUtil {
     public static Tecnico convertTecnicoDtoToTecnico(TecnicoDto dto) {
         return modelMapper.map(dto, Tecnico.class);
     }
+
+    public static TecnicoDto convertTecnicoToTecnicoDto(Tecnico tecnico) {
+        return modelMapper.map(tecnico, TecnicoDto.class);
+    }
 }

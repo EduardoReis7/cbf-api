@@ -13,7 +13,7 @@ public class TimeDto {
     @JsonFormat(pattern = "yyyy/MM/dd")
     private LocalDate dataFundacao;
     private TecnicoDto tecnicoDto;
-    private List<JogadorDto> listaJogadores;
+    private List<JogadorDto> listaJogadoresDto;
 
     public Long getId() {
         return id;
@@ -47,11 +47,11 @@ public class TimeDto {
         this.tecnicoDto = tecnicoDto;
     }
 
-    public List<JogadorDto> getListaJogadores() {
-        return listaJogadores;
+    public List<JogadorDto> getListaJogadoresDto() {
+        return listaJogadoresDto;
     }
 
-    public void setListaJogadores(List<JogadorDto> listaJogadores) {
-        this.listaJogadores = listaJogadores;
+    public void setListaJogadoresDto(List<JogadorDto> listaJogadoresDto) {
+        this.listaJogadoresDto = listaJogadoresDto;
     }
 }
